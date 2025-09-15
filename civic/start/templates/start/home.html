@@ -1,0 +1,10 @@
+{% extends 'start/base.html' %}
+{% load static %}
+
+{% block body %}
+  <h1>Hi all welcome to the civic complaint readdressal portal</h1>
+  <a href="{% url 'citizen_register' %}">Citizen Register</a>
+  <a href="{% url 'department_register' %}">Department Register</a>
+  <a href="{% url 'citizen_login' %}">Citizen Login</a>
+  <a href="{% url 'department_login' %}">Department Login</a>
+{% endblock %} 

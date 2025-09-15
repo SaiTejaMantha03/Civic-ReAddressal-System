@@ -1,0 +1,8 @@
+{% extends 'start/base.html' %}
+{% load static %}
+
+{% block body %}
+  <h1>Citizen Login portal</h1>
+    <h3>IF not registered register</h3>
+<a href="{% url 'citizen_register' %}">click</a>
+{% endblock %}
