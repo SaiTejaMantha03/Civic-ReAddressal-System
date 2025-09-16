@@ -4,8 +4,8 @@ services:
     env: python
     buildCommand: |
       pip install -r requirements.txt
-      npm install --prefix static
-      npm run build --prefix static
+      npm install --prefix civic/static
+      npm run build --prefix civic/static
     startCommand: gunicorn civic.wsgi:application --bind 0.0.0.0:10000
     envVars:
       - key: DJANGO_SETTINGS_MODULE
