@@ -2,7 +2,59 @@
 {% load static %}
 
 {% block body %}
-Home to all
-<h1>Register your complaint.</h1>
-<a href="{% url 'citizen_status'%}"> Complaint Status</a>
+<title>Your Complaint Status</title>
+<link rel="stylesheet" href="{url 'status'}">
+
+<title>Register Complaint</title>
+<link rel="stylesheet" href="{% static 'src/globals.css' %}">
+
+<body class="font-sans bg-background text-foreground min-h-screen p-6">
+  <h2 class="text-center text-3xl font-bold mb-6">Register Complaint</h2>
+  <form action="/submit_complaint" method="POST" enctype="multipart/form-data" class="w-full max-w-2xl mx-auto border border-border rounded-[var(--radius)] bg-card p-6 shadow-xs">
+    <label for="gps" class="font-medium">Location (GPS)</label>
+    <input type="text" id="gps" name="gps" readonly class="mt-2 mb-4 w-full rounded-md border border-border bg-background px-3 py-2 outline-ring/50 focus:outline focus:outline-1" />
+
+    <label for="complaint_type" class="font-medium">Name </label>
+    <input type="text" id="name" name="name" required class="mt-2 mb-4 w-full rounded-md border border-border bg-background px-3 py-2 outline-ring/50 focus:outline focus:outline-1" />
+
+    <label for="complaint_type" class="font-medium">Phone Number</label>
+    <input type="text" id="number" name="number" required class="mt-2 mb-4 w-full rounded-md border border-border bg-background px-3 py-2 outline-ring/50 focus:outline focus:outline-1" />
+
+    <label for="complaint_type" class="font-medium">Email</label>
+    <input type="email" id="email" name="email" required class="mt-2 mb-4 w-full rounded-md border border-border bg-background px-3 py-2 outline-ring/50 focus:outline focus:outline-1" />
+
+    <label for="complaint_text" class="font-medium">Complaint Text</label>
+    <textarea id="complaint_text" name="complaint_text" rows="5" required class="mt-2 mb-4 w-full rounded-md border border-border bg-background px-3 py-2 outline-ring/50 focus:outline focus:outline-1"></textarea>
+
+    <label for="complaint_voice" class="font-medium">Or Record Voice Complaint</label>
+    <input type="file" id="complaint_voice" name="complaint_voice" accept="audio/*" class="mt-2 mb-6 w-full text-sm" />
+
+    <label for="complaint_image" class="font-medium">Upload Image (Optional)</label>
+    <input type="file" id="complaint_image" name="complaint_image" accept="image/*" class="mt-2 mb-6 w-full text-sm" />
+
+    
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <button type="submit" class="w-full h-10 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium">Submit Complaint</button>
+    <a class="block text-center mt-3 text-sm text-muted-foreground hover:text-primary underline" href="/">Back to Home</a>
+  </form>
+
+<script>
+  window.onload = function () {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        document.getElementById('gps').value = position.coords.latitude + ", " + position.coords.longitude;
+      }, function (error) {
+        console.log("Error getting location: " + error.message);
+      });
+    } else {
+      console.log('Geolocation is not supported by this browser.');
+    }
+  };
+</script>
+</body>
+</html>
+
+
+
+
 {% endblock %}

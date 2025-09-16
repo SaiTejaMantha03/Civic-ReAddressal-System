@@ -1,17 +1,33 @@
 from django.shortcuts import render
+from django.http import HttpResponseServerError
+from django.template import TemplateDoesNotExist
 
-# Create your views here.
 def index(request):
-    return render(request, 'start/home.html')
+    try:
+        return render(request, 'start/home.html')
+    except TemplateDoesNotExist:
+        return HttpResponseServerError('Template not found')
 
 def citizen_login(request):
-    return render(request, 'start/citizen_login.html')
+    try:
+        return render(request, 'start/citizen_login.html')
+    except TemplateDoesNotExist:
+        return HttpResponseServerError('Template not found')
 
 def citizen_register(request):
-    return render(request, 'start/citizen_register.html')
+    try:
+        return render(request, 'start/citizen_register.html')
+    except TemplateDoesNotExist:
+        return HttpResponseServerError('Template not found')
 
-def dep_login(request):
-    return render(request, 'start/dep_login.html')
+def department_login(request):
+    try:
+        return render(request, 'start/dep_login.html')
+    except TemplateDoesNotExist:
+        return HttpResponseServerError('Template not found')
 
-def dep_register(request):
-    return render(request, 'start/dep_register.html')
+def department_register(request):
+    try:
+        return render(request, 'start/dep_register.html')
+    except TemplateDoesNotExist:
+        return HttpResponseServerError('Template not found')
