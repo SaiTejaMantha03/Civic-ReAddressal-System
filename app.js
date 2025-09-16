@@ -14,14 +14,18 @@ document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
 // Details accordion poly UX: close others when one opens
 const accordion = document.getElementById('accordion')
 if (accordion) {
-  accordion.addEventListener('toggle', (e) => {
-    const target = e.target
-    if (target.tagName === 'DETAILS' && target.open) {
-      accordion.querySelectorAll('details').forEach((d) => {
-        if (d !== target) d.open = false
-      })
+  accordion.addEventListener('click', (e) => {
+    if (e.target.tagName === 'SUMMARY') {
+      const details = e.target.parentElement
+      setTimeout(() => {
+        if (details.open) {
+          accordion.querySelectorAll('details').forEach((d) => {
+            if (d !== details) d.open = false
+          })
+        }
+      }, 0)
     }
-  }, true)
+  })
 }
 
 
