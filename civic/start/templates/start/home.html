@@ -2,9 +2,227 @@
 {% load static %}
 
 {% block body %}
-  <h1>Hi all welcome to the civic complaint readdressal portal</h1>
-  <a href="{% url 'citizen_register' %}">Citizen Register</a>
-  <a href="{% url 'department_register' %}">Department Register</a>
-  <a href="{% url 'citizen_login' %}">Citizen Login</a>
-  <a href="{% url 'department_login' %}">Department Login</a>
+
+ 
+  <body class="font-sans">
+    <nav class="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50">
+      <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <svg class="h-8 w-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16l4-2 4 2 4-2 4 2V8z"/></svg>
+          <span class="text-xl font-bold text-foreground">CitizenVoice</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#features" class="text-sm font-medium text-foreground hover:text-primary">Features</a>
+          <a href="#how" class="text-sm font-medium text-foreground hover:text-primary">How It Works</a>
+          <a href="{% url 'citizen_status' %}" class="text-sm font-medium text-foreground hover:text-primary">Track Complaint</a>
+          <a href="#help" class="text-sm font-medium text-foreground hover:text-primary">Help</a>
+          <a href="#faqs" class="text-sm font-medium text-foreground hover:text-primary">FAQs</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-3">
+          <a href="{% url 'citizen_login' %}" class="text-sm font-medium text-foreground hover:text-primary">Sign in</a>
+          <a href="{% url 'citizen_register' %}" class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium transition-all bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-9 px-4">
+            Get started
+            <svg class="ml-2 h-4 w-4 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="py-20 px-4 bg-gradient-to-b from-muted/50 to-background">
+      <div class="container mx-auto text-center max-w-4xl">
+        <div class="mb-4">
+          <span class="inline-block px-3 py-1 text-sm bg-primary/10 text-primary rounded-full mb-4">ANNOUNCEMENT • Make Your Voice Heard • 24/7</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Your Voice Matters - File Your Complaint Today</h1>
+        <p class="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          Submit complaints about services, products, or civic issues. Track progress in real-time and get results.
+          Include an engaging app preview or phone mockup on the right to visually demonstrate what users can expect.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a href="{% url 'citizen_dashboard' %}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-10 px-6"><svg class="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16l4-2 4 2 4-2 4 2V8z"/></svg>File Complaint</a>
+          <a href="{% url 'citizen_status' %}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-10 px-6"><svg class="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Track Status</a>
+        </div>
+        <p class="text-sm text-muted-foreground">2000+ Complaints Resolved</p>
+      </div>
+    </section>
+
+    <section id="features" class="py-20 px-4">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Features Section</h2>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-stretch mb-16">
+          <div class="relative overflow-hidden border border-[#e1e2e3] rounded-[16px] bg-card flex flex-col items-start justify-start gap-3 w-full h-full p-5 shadow-[0_1px_5px_-4px_#242424b3,0_4px_8px_#2424240d]">
+            <div class="flex items-center mb-2">
+              <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16l4-2 4 2 4-2 4 2V8z"/></svg>
+              <h4 class="text-xl font-semibold">Unified Complaint Portal</h4>
+            </div>
+            <p class="text-muted-foreground">Submit any civic or consumer issue in minutes. We auto‑route it to the right department, keep you notified with real‑time status updates, and track outcomes end‑to‑end.</p>
+          </div>
+          <div class="relative overflow-hidden border border-[#e1e2e3] rounded-[16px] bg-card flex flex-col items-start justify-start gap-3 w-full h-full p-5 shadow-[0_1px_5px_-4px_#242424b3,0_4px_8px_#2424240d]">
+            <div class="flex items-center mb-2">
+              <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16l4-2 4 2 4-2 4 2V8z"/></svg>
+              <h4 class="text-xl font-semibold">Easy Submission</h4>
+            </div>
+            <p class="text-muted-foreground">Simple forms with photo upload capability. Submit complaints about products, services, civic issues, or government departments in minutes.</p>
+          </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
+          <div class="relative overflow-hidden border border-[#e1e2e3] rounded-[16px] bg-card flex flex-col items-start justify-start gap-3 w-full h-full p-5 shadow-[0_1px_5px_-4px_#242424b3,0_4px_8px_#2424240d]">
+            <div class="flex items-center mb-2">
+              <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <h4 class="text-xl font-semibold">Real-time Tracking</h4>
+            </div>
+            <p class="text-muted-foreground">Track your complaint status 24/7 with unique ID. Get instant updates and estimated resolution times.</p>
+          </div>
+          <div class="relative overflow-hidden border border-[#e1e2e3] rounded-[16px] bg-card flex flex-col items-start justify-start gap-3 w-full h-full p-5 shadow-[0_1px_5px_-4px_#242424b3,0_4px_8px_#2424240d]">
+            <div class="flex items-center mb-2">
+              <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <h4 class="text-xl font-semibold">Secure & Private</h4>
+            </div>
+            <p class="text-muted-foreground">Your personal information is protected and confidential. Free service with no charges for filing or tracking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-4 bg-muted/30">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Us Section</h2>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="h-8 w-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8"/></svg>
+            </div>
+            <h4 class="font-semibold mb-2">Mobile Friendly</h4>
+            <p class="text-sm text-muted-foreground">Submit and track from anywhere</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="h-8 w-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4 class="font-semibold mb-2">For Everyone</h4>
+            <p class="text-sm text-muted-foreground">Consumers, citizens, residents</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="h-8 w-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2h4v6h-4z"/><path d="M4 22h16"/><path d="M6 18h12"/><path d="M8 14h8"/></svg>
+            </div>
+            <h4 class="font-semibold mb-2">Fast Resolution</h4>
+            <p class="text-sm text-muted-foreground">Average 15 days resolution time</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="h-8 w-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7"/><path d="M7 12l5-5 5 5"/></svg>
+            </div>
+            <h4 class="font-semibold mb-2">Proven Results</h4>
+            <p class="text-sm text-muted-foreground">10,000+ complaints resolved</p>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <p class="text-sm text-muted-foreground">Make your strengths obvious.</p>
+          <p class="text-xs text-muted-foreground mt-2">Use icons, short copy, and benefits that tell a story why this is exactly what it would pick your app over others.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faqs" class="py-20 px-4">
+      <div class="container mx-auto max-w-3xl">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">FAQ Section</h2>
+        </div>
+        <div class="space-y-4" id="accordion">
+          <details class="border rounded-lg px-6 py-4">
+            <summary class="cursor-pointer text-left font-medium">How do I file a complaint?</summary>
+            <div class="pt-3 text-muted-foreground">Simply click "File Complaint", fill out the form with your issue details, upload any supporting photos, and submit. You'll receive a unique tracking ID immediately.</div>
+          </details>
+          <details class="border rounded-lg px-6 py-4">
+            <summary class="cursor-pointer text-left font-medium">What types of complaints are accepted?</summary>
+            <div class="pt-3 text-muted-foreground">We accept complaints about products, services, civic issues, government departments, consumer rights violations, and municipal services.</div>
+          </details>
+          <details class="border rounded-lg px-6 py-4">
+            <summary class="cursor-pointer text-left font-medium">How long does resolution take?</summary>
+            <div class="pt-3 text-muted-foreground">Average resolution time is 15 days, though it varies by complaint type and complexity. You can track progress in real-time with your unique ID.</div>
+          </details>
+          <details class="border rounded-lg px-6 py-4">
+            <summary class="cursor-pointer text-left font-medium">Is this service free?</summary>
+            <div class="pt-3 text-muted-foreground">Yes, filing and tracking complaints is completely free. There are no hidden charges or fees for using our platform.</div>
+          </details>
+        </div>
+        <div class="text-center mt-12">
+          <p class="text-sm text-muted-foreground">Reduce hesitation with smart answers.</p>
+          <p class="text-xs text-muted-foreground mt-2">Use collapsible questions to address common concerns without overwhelming the layout.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-4 bg-muted/30">
+      <div class="container mx-auto text-center max-w-3xl">
+        <div class="mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Get Your Issue Resolved?</h2>
+          <p class="text-lg text-muted-foreground">Join thousands of citizens who have successfully resolved their complaints through our platform.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a href="/complaint/register.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-10 px-6"><svg class="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16l4-2 4 2 4-2 4 2V8z"/></svg>File Complaint Now</a>
+          <a href="/complaint/status.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-10 px-6"><svg class="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Track Existing</a>
+        </div>
+        <div class="text-center">
+          <p class="text-sm text-muted-foreground">Pair with a visual — a phone mockup or screenshot that supports your CTA and helps the average user.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-12 px-4 border-t bg-background">
+      <div class="container mx-auto">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <svg class="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16l4-2 4 2 4-2 4 2V8z"/></svg>
+              <span class="font-bold">CitizenVoice</span>
+            </div>
+            <p class="text-sm text-muted-foreground">Making citizen voices heard through efficient complaint resolution.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><a href="/complaint/register.html" class="hover:text-primary">File Complaint</a></li>
+              <li><a href="/complaint/status.html" class="hover:text-primary">Track Status</a></li>
+              <li><a href="#" class="hover:text-primary">Help Center</a></li>
+              <li><a href="#" class="hover:text-primary">FAQs</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-primary">Terms of Service</a></li>
+              <li><a href="#" class="hover:text-primary">Cookie Policy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Contact</h4>
+            <div class="space-y-2 text-sm text-muted-foreground">
+              <div class="flex items-center"><svg class="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2 5.18 2 2 0 0 1 4 3h4.09a2 2 0 0 1 2 1.72 12.66 12.66 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.1 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.66 12.66 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>1800-XXX-XXXX</span></div>
+              <div class="flex items-center"><svg class="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg><span>support@citizenvoice.gov</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t mt-8 pt-8 text-center">
+          <div class="flex justify-center space-x-6 mb-4">
+            <a href="#" class="text-muted-foreground hover:text-primary">LinkedIn</a>
+            <a href="#" class="text-muted-foreground hover:text-primary">Instagram</a>
+            <a href="#" class="text-muted-foreground hover:text-primary">Facebook</a>
+            <a href="#" class="text-muted-foreground hover:text-primary">Twitter</a>
+          </div>
+          <p class="text-sm text-muted-foreground">© 2025 CitizenVoice. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
 {% endblock %} 

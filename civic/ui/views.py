@@ -1,9 +1,15 @@
 from django.shortcuts import render
+from django.http import HttpResponseServerError
+from django.template import TemplateDoesNotExist
 
-# Create your views here.
 def index(request):
-    return render(request, 'ui/index.html')
-
+    try:
+        return render(request, 'ui/index.html')
+    except TemplateDoesNotExist:
+        return HttpResponseServerError('Template not found')
 
 def status(request):
-    return render(request, 'ui/status.html')
+    try:
+        return render(request, 'ui/status.html')
+    except TemplateDoesNotExist:
+        return HttpResponseServerError('Template not found')
