@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign Up</title>
+<link rel="stylesheet" href="/src/globals.css">
+</head>
+<body class="font-sans bg-background text-foreground min-h-screen">
+  <div class="fixed inset-0 bg-background/60 backdrop-blur flex items-center justify-center p-4">
+    <div class="relative w-full max-w-lg border border-border rounded-[var(--radius)] bg-card shadow-xs">
+      <button onclick="history.back()" aria-label="Close" class="absolute right-4 top-4 text-muted-foreground hover:text-foreground">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <div class="p-6">
+        <h1 class="text-2xl font-bold mb-1">Sign up</h1>
+        <p class="text-sm text-muted-foreground mb-6">choose your account type</p>
+
+        <div class="flex flex-col gap-3">
+          <a href="/auth/user-signup.html" class="inline-flex items-center justify-between w-full rounded-md border border-border bg-background px-4 py-3 hover:bg-muted/30 transition">
+            <span class="inline-flex items-center gap-3">
+              <span class="h-6 w-6 rounded-full bg-primary/10 text-primary inline-flex items-center justify-center">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <span>User</span>
+            </span>
+            <svg class="h-4 w-4 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+
+          <a href="/auth/department-signup.html" class="inline-flex items-center justify-between w-full rounded-md border border-border bg-background px-4 py-3 hover:bg-muted/30 transition">
+            <span class="inline-flex items-center gap-3">
+              <span class="h-6 w-6 rounded-full bg-primary/10 text-primary inline-flex items-center justify-center">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 22V12h6v10"/></svg>
+              </span>
+              <span>Department</span>
+            </span>
+            <svg class="h-4 w-4 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+
+          <a href="/auth/admin-signup.html" class="inline-flex items-center justify-between w-full rounded-md border border-border bg-background px-4 py-3 hover:bg-muted/30 transition">
+            <span class="inline-flex items-center gap-3">
+              <span class="h-6 w-6 rounded-full bg-primary/10 text-primary inline-flex items-center justify-center">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17a5 5 0 0 0 5-5V5l-5-2-5 2v7a5 5 0 0 0 5 5z"/></svg>
+              </span>
+              <span>Admin</span>
+            </span>
+            <svg class="h-4 w-4 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+        </div>
+
+        <div class="mt-5 text-sm text-center">
+          <span class="text-muted-foreground">Already have an account?</span>
+          <a class="underline hover:text-primary ml-1" href="/auth/signin.html">Sign in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+

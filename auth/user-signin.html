@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>User Sign In</title>
+<link rel="stylesheet" href="/src/globals.css">
+</head>
+<body class="font-sans bg-background text-foreground min-h-screen flex items-center justify-center p-4">
+    <form action="/citizen_dashboard" method="POST" class="w-full max-w-sm border border-border rounded-[var(--radius)] bg-card p-6 shadow-xs">
+        <h2 class="text-center text-xl font-semibold mb-4">User Sign In</h2>
+        <label for="username" class="text-sm font-medium">Username</label>
+        <input type="text" id="username" name="username" required class="mt-2 mb-4 w-full rounded-md border border-border bg-background px-3 py-2 outline-ring/50 focus:outline focus:outline-1" />
+        <label for="password" class="text-sm font-medium">Password</label>
+        <input type="password" id="password" name="password" required class="mt-2 mb-6 w-full rounded-md border border-border bg-background px-3 py-2 outline-ring/50 focus:outline focus:outline-1" />
+        <button type="submit" class="w-full h-10 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium">Sign In</button>
+        <a class="block text-center mt-3 text-sm text-muted-foreground hover:text-primary underline" href="/login/signin.html">Back to role selection</a>
+    </form>
+</body>
+</html>
+
+

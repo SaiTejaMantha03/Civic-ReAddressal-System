@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Register Complaint</title>
+<link rel="stylesheet" href="/src/globals.css">
+</head>
+<body class="font-sans bg-background text-foreground min-h-screen p-6">
+    <h2 class="text-center text-3xl font-bold mb-6">Register Complaint</h2>
+    <form action="/submit_complaint" method="POST" enctype="multipart/form-data" class="w-full max-w-2xl mx-auto border border-border rounded-[var(--radius)] bg-card p-6 shadow-xs">
+        <label for="gps" class="font-medium">Location (GPS)</label>
+        <input type="text" id="gps" name="gps" readonly class="mt-2 mb-4 w-full rounded-md border border-border bg-background px-3 py-2 outline-ring/50 focus:outline focus:outline-1" />
+
+        <label for="complaint_text" class="font-medium">Complaint Text</label>
+        <textarea id="complaint_text" name="complaint_text" rows="5" required class="mt-2 mb-4 w-full rounded-md border border-border bg-background px-3 py-2 outline-ring/50 focus:outline focus:outline-1"></textarea>
+
+        <label for="complaint_voice" class="font-medium">Or Record Voice Complaint</label>
+        <input type="file" id="complaint_voice" name="complaint_voice" accept="audio/*" class="mt-2 mb-6 w-full text-sm" />
+
+        <button type="submit" class="w-full h-10 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium">Submit Complaint</button>
+        <a class="block text-center mt-3 text-sm text-muted-foreground hover:text-primary underline" href="/">Back to Home</a>
+    </form>
+<script>
+    window.onload = function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                document.getElementById('gps').value = position.coords.latitude + ", " + position.coords.longitude;
+            }, function (error) {
+                console.log("Error getting location: " + error.message);
+            });
+        } else {
+            alert('Geolocation is not supported by this browser.');
+        }
+    };
+</script>
+</body>
+</html>
+
+

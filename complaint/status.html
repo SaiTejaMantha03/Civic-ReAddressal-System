@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Your Complaint Status</title>
+<link rel="stylesheet" href="/src/globals.css">
+</head>
+<body class="font-sans bg-background text-foreground min-h-screen p-6">
+  <h2 class="text-center text-3xl font-bold mb-6">Your Complaint Status</h2>
+  <table class="w-full max-w-4xl mx-auto border border-border rounded-[var(--radius)] bg-card overflow-hidden">
+    <thead>
+      <tr class="bg-primary text-primary-foreground">
+        <th class="text-left px-5 py-3">Complaint ID</th>
+        <th class="text-left px-5 py-3">Status</th>
+        <th class="text-left px-5 py-3">Priority</th>
+        <th class="text-left px-5 py-3">Department</th>
+        <th class="text-left px-5 py-3">Date Submitted</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y border-t border-border">
+      <tr class="hover:bg-muted/30">
+        <td class="px-5 py-3" data-label="Complaint ID">001</td>
+        <td class="px-5 py-3" data-label="Status">In Progress</td>
+        <td class="px-5 py-3" data-label="Priority">High</td>
+        <td class="px-5 py-3" data-label="Department">Sanitation</td>
+        <td class="px-5 py-3" data-label="Date Submitted">2025-09-10</td>
+      </tr>
+    </tbody>
+  </table>
+  <a class="block text-center mt-4 text-sm text-muted-foreground hover:text-primary underline" href="/">Back to Home</a>
+</body>
+</html>
+
+
